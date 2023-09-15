@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\n\n [+] Iniciando el Proceso de Personalización Parrot\n\n"
+
 if [ "$(whoami)" == "root" ]; then
     exit 1
 fi
@@ -108,6 +110,8 @@ sudo cp -v $ruta/.p10k.zsh-root /root/.p10k.zsh
 
 sudo cp -v $ruta/scripts/whichSystem.py /usr/local/bin/
 sudo cp -v $ruta/scripts/screenshot /usr/local/bin/
+sudo cp -v $ruta/scripts/ssltest.py /usr/local/bin/
+sudo cp -v $ruta/scripts/CIRD.sh /usr/local/bin/
 
 # Plugins ZSH
 
@@ -132,6 +136,8 @@ chmod +x ~/.config/bin/htb_target.sh
 chmod +x ~/.config/polybar/launch.sh
 sudo chmod +x /usr/local/bin/whichSystem.py
 sudo chmod +x /usr/local/bin/screenshot
+sudo chmod +x /usr/local/bin/ssltest.py
+sudo chmod +x /usr/local/bin/CIRD.sh
 
 # Configuramos el Tema de Rofi
 
