@@ -137,7 +137,7 @@ super + shift + b
 	burpsuite
 
 # Codium
-super + shift + c
+super + shift + e
 	codium
 
 ###############
