@@ -152,6 +152,11 @@ rofi-theme-selector
 rm -rf ~/github
 rm -rf $ruta
 
+#Otras Utilidades
+
+sudo apt install -y exploitdb 
+sudo apt install -y rlwrap
+
 # Mensaje de Instalado
 
 notify-send "BSPWM INSTALADO"
