@@ -61,6 +61,10 @@ alias ls='lsd --group-dirs=first'
 alias cat='/bin/batcat --paging=never'
 alias catn='cat'
 alias catnl='batcat'
+alias php_filter_chain_generator='python3 /usr/local/bin/php_filter_chain_generator.py --chain'
+alias CIRD='sudo /usr/local/bin/CIRD.sh '
+alias SSLTest='sudo python3 /usr/local/bin/ssltest.py '
+alias WhichSystem='sudo python3 /usr/local/bin/whichSystem.py '
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
