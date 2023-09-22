@@ -114,6 +114,9 @@ sudo cp -v $ruta/scripts/ssltest.py /usr/local/bin/
 sudo cp -v $ruta/scripts/CIRD.sh /usr/local/bin/
 sudo cp -v $ruta/scripts/DockerClean.sh /usr/local/bin/
 sudo cp -v $ruta/scripts/php_filter_chain_generator.py /usr/local/bin
+sudo cp -v $ruta/scripts/ConnectHTB.sh /usr/local/bin
+sudo cp -v $ruta/scripts/DisconnectHTB.sh /usr/local/bin
+sudo cp -v $ruta/scripts/enum.sh /usr/local/bin
 
 # Plugins ZSH
 
@@ -142,6 +145,9 @@ sudo chmod +x /usr/local/bin/ssltest.py
 sudo chmod +x /usr/local/bin/CIRD.sh
 sudo chmod +x /usr/local/bin/DockerClean.sh
 sudo chmod +x /usr/local/bin/php_filter_chain_generator.py
+sudo chmod +x /usr/local/bin/ConnectHTB.sh
+sudo chmod +x /usr/local/bin/DisconnectHTB.sh
+sudo chmod +x /usr/local/bin/enum.sh
 
 # Configuramos el Tema de Rofi
 
@@ -156,6 +162,15 @@ rm -rf $ruta
 
 sudo apt install -y exploitdb 
 sudo apt install -y rlwrap
+sudo apt install -y python2
+sudo apt install -y ftp
+sudo apt install -y john
+
+# Instalacion de PIP2
+cd ~/
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+python2 get-pip.py
+rm -rf get-pip.py
 
 # Mensaje de Instalado
 

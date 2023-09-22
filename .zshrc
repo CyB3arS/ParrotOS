@@ -49,7 +49,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Manual configuration
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:~/.local/bin
+export LANG=es_CR.UTF-8
 
 # Custom Aliases
 
@@ -61,10 +62,16 @@ alias ls='lsd --group-dirs=first'
 alias cat='/bin/batcat --paging=never'
 alias catn='cat'
 alias catnl='batcat'
+alias reloadzsh='source ~/.zshrc'
+alias openzsh='nano ~/.zshrc'
 alias php_filter_chain_generator='python3 /usr/local/bin/php_filter_chain_generator.py --chain'
 alias CIRD='sudo /usr/local/bin/CIRD.sh '
 alias SSLTest='sudo python3 /usr/local/bin/ssltest.py '
 alias WhichSystem='sudo python3 /usr/local/bin/whichSystem.py '
+alias ConnectHTB='sudo ConnectHTB.sh '
+alias DisconnectHTB='DisconnectHTB.sh; ctarget'
+alias enum='enum.sh'
+alias VS='(sudo codium --no-sandbox --user-data-dir &>/dev/null) & disown'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -93,15 +100,26 @@ function extractPorts(){
 
 # Settarget
 
-function settarget(){
+function starget(){
 
 	if [ $# -eq 1 ]; then
 	echo $1 > ~/.config/bin/target
+	export target="$1"
 	elif [ $# -gt 2 ]; then
 	echo "settarget [IP] [NAME] | settarget [IP]"
 	else
 	echo $1 $2 > ~/.config/bin/target
+	export target="$1"
+	export target_name="$2"
 	fi
+}
+
+function ctarget(){
+
+	echo "" > ~/.config/bin/target
+	export target=""
+	export target_name=""
+	
 }
 
 # Set 'man' colors
@@ -154,3 +172,4 @@ bindkey "^[[3~" delete-char
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
